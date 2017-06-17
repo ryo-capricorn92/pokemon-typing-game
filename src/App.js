@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Grid } from './Presentation'
+import { Container } from './Presentation'
 
 class App extends Component {
   render() {
-    console.log(Grid);
     return (
-      <div className="App">
+      <Container>
         <p>Blegh</p>
-      </div>
+      </Container>
     );
   }
 }

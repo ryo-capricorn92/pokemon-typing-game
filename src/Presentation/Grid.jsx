@@ -29,9 +29,7 @@ function mediaQuery(breakpoint, size, width) {
   `;
 }
 
-const Grid = styled.div.withConfig({
-  displayName: 'Grid',
-})`
+const Grid = styled.div`
   /* universal styling */
   box-sizing: border-box;
   max-width: 100%;
