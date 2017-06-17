@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import Grid from './Grid';
 
+//   ///////////////////////////
+//  ///// Grid Containers /////
+// ///////////////////////////
 const WindowRow = Grid.extend`
   height: 400px;
   max-height: 400px;
@@ -14,6 +17,28 @@ WindowRow.defaultProps = {
   justify: 'space-around',
 };
 
+const TextRow = Grid.extend`
+  height: 150px;
+  max-height: 150px;
+  flex-grow: 0;
+`;
+
+TextRow.defaultProps = {
+  row: true,
+  justify: 'space-around',
+};
+
+const FightScreenRow = Grid.extend`
+  height: 200px;
+`;
+
+FightScreenRow.defaultProps = {
+  row: true,
+};
+
+//   /////////////////////////////
+//  ///// Styled Containers /////
+// /////////////////////////////
 const FightWindow = styled.div`
   width: 650px;
   height: 400px;
@@ -38,21 +63,53 @@ const FightText = styled.input`
   font-family: courier;
 `;
 
-const TextRow = Grid.extend`
-  height: 150px;
-  max-height: 150px;
-  flex-grow: 0;
+const Header = Grid.extend`
+  height: 31px;
+  max-height: 31px;
+  border-radius: 17px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(
+    180deg, 
+    #ffbd4f 0%, 
+    #ff9900 100%
+  );
 `;
 
-TextRow.defaultProps = {
-  row: true,
-  justify: 'space-around',
-};
+const HpBar = Grid.extend`
+  height: 50px;
+  max-height: 350px;
+  background: linear-gradient(
+    180deg, 
+    #ffbd4f 0%, 
+    #ff9900 100%
+  );
+`;
 
+//   ////////////////////////
+//  ///// Fight Window /////
+// ////////////////////////
 const Fight = () => (
   <Grid column justify="space-around">
     <WindowRow>
-      <FightWindow />
+      <FightWindow>
+        <Grid column>
+          <Header />
+          <FightScreenRow>
+            <Grid />
+            <Grid column>
+              <Grid />
+              <Grid shrink>
+                <img />
+              </Grid>
+              <Grid />
+            </Grid>
+            <Grid />
+          </FightScreenRow>
+          <HpBar />
+          <Grid />
+        </Grid>
+      </FightWindow>
     </WindowRow>
     <TextRow>
       <FightText />
