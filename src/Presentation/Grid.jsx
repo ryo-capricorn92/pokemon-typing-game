@@ -1,4 +1,4 @@
-import styler from 'styled-components';
+import styled from 'styled-components';
 
 // not finalized, responsive design still to be decided on
 const breakpoints = {
@@ -29,11 +29,7 @@ function mediaQuery(breakpoint, size, width) {
   `;
 }
 
-const styled = styler.div.withConfig({
-  displayName: 'Grid',
-});
-
-const Grid = styled`
+const Grid = styled.div`
   /* universal styling */
   box-sizing: border-box;
   max-width: 100%;
