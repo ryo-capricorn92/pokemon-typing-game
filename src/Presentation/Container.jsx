@@ -3,35 +3,21 @@ import React from 'react';
 
 import Grid from './Grid';
 
-let styled;
-
 /* Header */
-/* -------------- */
-styled = Grid.extend.withConfig({
-  displayName: 'Header'
-});
-
-const Header = styled`
-  height: 40px;
-  max-height: 40px;
+const Header = Grid.extend`
+  height: 50px;
+  max-height: 50px;
   background: linear-gradient(
     180deg, 
     rgba(142, 226, 255, 1) 0%, 
     rgba(0, 157, 217, 1) 50%, 
     rgba(0, 99, 138, 1) 100%);
 `;
-/* -------------- */
-
 
 /* Footer */
-/* -------------- */
-styled = Grid.extend.withConfig({
-  displayName: 'Footer'
-});
-
-const Footer = styled`
-  height: 40px;
-  max-height: 40px;
+const Footer = Grid.extend`
+  height: 50px;
+  max-height: 50px;
   background: linear-gradient(
     180deg, 
     rgba(0, 99, 138, 1) 0%, 
@@ -39,39 +25,23 @@ const Footer = styled`
     rgba(142, 226, 255, 1) 100%
   );
 `
-/* -------------- */
-
 
 /* MainContainer */
-/* -------------- */
-styled = Grid.extend.withConfig({
-  displayName: 'MainContainer'
-});
-
-const MainContainer = styled`
+const MainContainer = Grid.extend`
   background: linear-gradient(
     180deg,
     rgba(225, 246, 250, 1) 0%,
     rgba(170, 231, 242, 1) 100%
   );
-`
-/* -------------- */
+`;
 
 
 /* AppGrid */
-/* -------------- */
-styled = Grid.extend.withConfig({
-  displayName: 'AppGrid',
-});
-
-const AppGrid = styled`
+const AppGrid = Grid.extend`
   height: 100vh;
 `
-/* -------------- */
-
 
 /* Container */
-/* -------------- */
 const Container = ({ children }) => (
   <AppGrid column>
     <Header />
@@ -85,7 +55,5 @@ const Container = ({ children }) => (
 Container.propTypes = {
   children: PropTypes.node,
 }
-/* -------------- */
-
 
 export default Container;
