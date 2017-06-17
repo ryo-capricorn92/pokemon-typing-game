@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { Container } from './Presentation'
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import { Container } from './Presentation';
 
-class App extends Component {
-  render() {
-    return (
-      <Container>
-        <p>Blegh</p>
-      </Container>
-    );
-  }
-}
+const App = () => (
+  <Container>
+    <p>Blegh</p>
+  </Container>
+);
 
 export default App;
+/* eslint-enable react/jsx-filename-extension */
